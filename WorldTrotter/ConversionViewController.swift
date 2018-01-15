@@ -26,6 +26,22 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         return nf
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+        let dateComponents = calendar.components(in: NSTimeZone.default, from: NSDate() as Date)
+        
+        if let hourOfDay = dateComponents.hour, (hourOfDay > 19 || hourOfDay <= 6){
+            view.backgroundColor = UIColor.darkGray
+        }
+
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print("ConversionViewController loaded its view")
+    }
+    
     @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
         if let text = textField.text, let value = Double(text) {
             fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
