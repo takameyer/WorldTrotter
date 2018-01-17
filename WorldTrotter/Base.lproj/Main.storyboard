@@ -97,14 +97,10 @@
         <!--Map-->
         <scene sceneID="v90-iq-mir">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sr-dH-7RU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="4fD-AP-Zc6" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Ohl-29-28w">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="Vhn-H7-Db8"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2sr-dH-7RU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1514" y="546"/>
         </scene>
