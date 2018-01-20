@@ -42,11 +42,10 @@
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ggi-wL-XiF">
-                                <rect key="frame" x="85" y="59" width="250" height="84"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ggi-wL-XiF">
+                                <rect key="frame" x="62.5" y="28" width="250" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="bb5-XW-O59"/>
-                                    <constraint firstAttribute="width" constant="250" id="kZp-NU-VSj"/>
                                 </constraints>
                                 <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
@@ -107,10 +106,10 @@
         <!--Map-->
         <scene sceneID="v90-iq-mir">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2sr-dH-7RU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="4fD-AP-Zc6" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="Vhn-H7-Db8"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sr-dH-7RU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1514" y="546"/>
         </scene>
@@ -120,6 +119,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uti-jS-Mvu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nc1-h8-YGA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
