@@ -1,8 +1,10 @@
 import UIKit
+import CoreLocation
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
     
+    var locationManager: CLLocationManager!
     var mapView: MKMapView!
     
     override func loadView() {
@@ -11,8 +13,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
      
         addSegmentedControl(view)
         addMyLocationButton(view)
-
-        
     }
     
     func addMyLocationButton(_ view: UIView){
@@ -67,15 +67,46 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Show my location
-        
         
         print( "MapViewController loaded its view." )
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
+    
+    func determineCurrentLocation()
+    {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:[CLLocation]){
+        let userLocation:CLLocation = locations[0] as CLLocation
+        manager.stopUpdatingLocation()
+        
+        let center = CLLocationCoordinate2D(
+            latitude: userLocation.coordinate.latitude,
+            longitude: userLocation.coordinate.longitude
+        )
+        
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    
+        mapView.setRegion(region, animated: true)
+        
+    }
+    
+
     @objc func myLocationButtonTapped(sender: UIButton!){
-        print( "You pressed me!" )
         mapView.showsUserLocation = true
+        determineCurrentLocation()
     }
     
     @objc func mapTypeChanged(_ segControl: UISegmentedControl) {
