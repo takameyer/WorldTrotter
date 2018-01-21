@@ -18,31 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKo-ad-nT5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKo-ad-nT5">
                                 <rect key="frame" x="39.5" y="120" width="296" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyN-73-2Ey">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyN-73-2Ey">
                                 <rect key="frame" x="130.5" y="171" width="114" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Celsius" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTf-bT-ogm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Celsius" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTf-bT-ogm">
                                 <rect key="frame" x="64.5" y="314" width="246" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyV-DQ-dDN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyV-DQ-dDN">
                                 <rect key="frame" x="129" y="222" width="117" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ggi-wL-XiF">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ggi-wL-XiF">
                                 <rect key="frame" x="62.5" y="28" width="250" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="bb5-XW-O59"/>
@@ -61,16 +61,24 @@
                         <constraints>
                             <constraint firstItem="NTf-bT-ogm" firstAttribute="centerX" secondItem="kyV-DQ-dDN" secondAttribute="centerX" id="44z-yo-GYw"/>
                             <constraint firstItem="Ggi-wL-XiF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4r9-nq-GRV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yyN-73-2Ey" secondAttribute="trailing" id="8hj-wU-nRi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NTf-bT-ogm" secondAttribute="trailing" id="AgV-W3-Ssw"/>
                             <constraint firstItem="QKo-ad-nT5" firstAttribute="top" secondItem="Ggi-wL-XiF" secondAttribute="bottom" constant="8" id="COD-Eu-9n1"/>
                             <constraint firstItem="kyV-DQ-dDN" firstAttribute="top" secondItem="yyN-73-2Ey" secondAttribute="bottom" constant="8" id="E8t-Le-nDW"/>
                             <constraint firstItem="Ggi-wL-XiF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="FBY-Dg-lWJ"/>
+                            <constraint firstItem="kyV-DQ-dDN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GDT-7c-7uA"/>
                             <constraint firstItem="yyN-73-2Ey" firstAttribute="top" secondItem="QKo-ad-nT5" secondAttribute="bottom" constant="8" id="GRd-Nd-vYz"/>
                             <constraint firstItem="Ggi-wL-XiF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J4N-io-TVa"/>
+                            <constraint firstItem="yyN-73-2Ey" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jen-dW-ety"/>
                             <constraint firstItem="QKo-ad-nT5" firstAttribute="centerX" secondItem="Ggi-wL-XiF" secondAttribute="centerX" id="SH5-wR-3VL"/>
                             <constraint firstItem="QKo-ad-nT5" firstAttribute="top" secondItem="Ggi-wL-XiF" secondAttribute="bottom" constant="8" id="UWx-IV-eBd"/>
                             <constraint firstItem="kyV-DQ-dDN" firstAttribute="centerX" secondItem="yyN-73-2Ey" secondAttribute="centerX" id="YcG-aI-Xxd"/>
                             <constraint firstItem="yyN-73-2Ey" firstAttribute="centerX" secondItem="Ggi-wL-XiF" secondAttribute="centerX" id="afg-pF-d7E"/>
                             <constraint firstItem="QKo-ad-nT5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ble-hQ-EA9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kyV-DQ-dDN" secondAttribute="trailing" id="eRJ-5u-axJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QKo-ad-nT5" secondAttribute="trailing" id="erf-ag-brO"/>
+                            <constraint firstItem="QKo-ad-nT5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kw9-Nx-6UG"/>
+                            <constraint firstItem="NTf-bT-ogm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ofZ-aq-1W5"/>
                             <constraint firstItem="NTf-bT-ogm" firstAttribute="top" secondItem="kyV-DQ-dDN" secondAttribute="bottom" constant="8" id="oow-nA-2pg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -125,8 +133,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="4fD-AP-Zc6" kind="relationship" relationship="viewControllers" id="4hZ-H0-Ibp"/>
-                        <segue destination="yjR-A7-Y9e" kind="relationship" relationship="viewControllers" id="hS0-ST-lRm"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="icJ-mi-HUb"/>
+                        <segue destination="yjR-A7-Y9e" kind="relationship" relationship="viewControllers" id="hS0-ST-lRm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vk-so-6qx" userLabel="First Responder" sceneMemberID="firstResponder"/>

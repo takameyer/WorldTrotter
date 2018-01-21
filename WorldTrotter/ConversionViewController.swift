@@ -22,7 +22,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
         nf.minimumFractionDigits = 0
-        nf.maximumFractionDigits = 0
+        nf.maximumFractionDigits = 2
         return nf
     }()
     
@@ -39,12 +39,14 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textField.placeholder = NSLocalizedString("value", tableName: "Main", comment:"comment")
+        
         print("ConversionViewController loaded its view")
     }
     
     @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
-        if let text = textField.text, let value = Double(text) {
-            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
+        if let text = textField.text, let number = numberFormatter.number(from: text) {
+            fahrenheitValue = Measurement(value: number.doubleValue, unit: .fahrenheit)
         } else {
             fahrenheitValue = nil
         }
@@ -56,7 +58,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     
     func updateCelsiusLabel() {
         if let celsiusValue = celsiusValue {
-            celsiusLabel.text = numberFormatter.string(from: NSNumber(value: celsiusValue.value))
+            celsiusLabel.text = numberFormatter.string(from: NSDecimalNumber(value: celsiusValue.value))
         } else {
             celsiusLabel.text = "???"
         }
@@ -64,19 +66,24 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        let allowedCharacterSet = NSCharacterSet(charactersIn: "0123456789.")
+        //let allowedCharacterSet = NSCharacterSet(charactersIn: "0123456789., ")
         
-        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
-        let replacementTextHasDecimalSeparator = string.range(of: ".")
-        let replacementTextHasOnlyDigitsAndDecimal = string.rangeOfCharacter(from: allowedCharacterSet as CharacterSet)
+        let currentLocale = Locale.current
+        let decimalSeparator = currentLocale.decimalSeparator ?? "."
+        if string.isEmpty { return true }
+       
+        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeparator)
+        let replacementStringHasDecimalSeparator = string.range(of: decimalSeparator)
+        let allowedCharactersSet = NSCharacterSet(charactersIn: decimalSeparator + "0123456789")
+        let allowedCharacters = string.rangeOfCharacter(from: allowedCharactersSet as CharacterSet)
         
-        if (existingTextHasDecimalSeparator != nil &&
-            replacementTextHasDecimalSeparator != nil) ||
-            replacementTextHasOnlyDigitsAndDecimal == nil{
-            return false
-        } else{
-            return true
+        if existingTextHasDecimalSeparator != nil
+            && replacementStringHasDecimalSeparator != nil
+            || allowedCharacters == nil{
+                return false
         }
+
+        return true
     }
     
 }
